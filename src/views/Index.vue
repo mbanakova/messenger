@@ -31,7 +31,7 @@
 					<p v-else>Cообщений пока нет</p>
 
 					<form class="chat__footer" @submit.prevent="SendMessage">
-						<textarea class="chat__textarea" v-model="inputMessage"></textarea>
+						<input class="chat__textarea" v-model="inputMessage" />
 						<input class="button" type="submit" value="Отправить" />
 					</form>
 				</div>
@@ -73,7 +73,6 @@ export default {
 
 		const SendMessage = () => {
 			const messageRef = db.database().ref("messages");
-			console.log(messageRef);
 			if (inputMessage.value === "" || inputMessage.value === null) {
 				return;
 			}
@@ -86,7 +85,6 @@ export default {
 				time: date.toLocaleString().replace(",", ""),
 			};
 
-			console.log(message);
 			messageRef.push(message);
 			inputMessage.value = "";
 		};
@@ -105,7 +103,6 @@ export default {
 						time: data[key].time,
 					});
 				});
-
 				state.messages = messages;
 			});
 		});
@@ -218,6 +215,7 @@ export default {
 	border: 2px solid $medium;
 	color: $light;
 	padding: 20px;
+	margin: 0 auto;
 	border-radius: 8px;
 	max-width: 1000px;
 	width: 100%;
@@ -300,7 +298,7 @@ p {
 
 .chat__footer {
 	display: flex;
-	align-items: flex-end;
+	align-items: center;
 	gap: 20px;
 
 	@media (max-width: $mobile) {
@@ -310,8 +308,6 @@ p {
 
 .chat__textarea {
 	flex-grow: 1;
-	resize: vertical;
-	min-height: 50px;
 	padding: 10px;
 	outline: none;
 	border: 2px solid $border;
