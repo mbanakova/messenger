@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+// @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500&display=swap");
+// @import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap");
+// @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap");
+
+$dark: #054a72;
+$medium: #11a6c0;
+$light: #abacad;
+$border: #d6d8da;
+$accent: #66fcf1;
+$bright: #45a29e;
+$focus: #e7f1ff;
+
+$black: #000000;
+$white: #ffffff;
+
+$tr: all 0.3s ease-in-out;
+
+$font: "Roboto", sans-serif;
+// $font: "Montserrat", sans-serif;
+// $font: "PT Sans", sans-serif;
+// $font: "Open Sans", sans-serif;
+
+$mobile: 767px;
+$tablet: 1023px;
+
+@mixin font($size: 10px, $height: 10px, $weight: 400) {
+	font-size: $size;
+	line-height: $height;
+	font-weight: $weight;
+}
